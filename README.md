@@ -88,18 +88,12 @@ euler-app/
 
 - Si deseas ejecutar el proyecto en un contenedor Docker, sigue estos pasos:
 
-1. **Construye la imagen Docker:**
+1. **Construye y ejecuta la imagen Docker:**
 
   ```
-  docker build -t edo_euler .
-  ```
-  Nota: El comando debe incluir el contexto (punto .).
-
-2. **Ejecuta el contenedor:**
-  ```
-  docker run -p 5001:5001 edo_euler
+  docker-compose up --build
   ```
 
-3. **Accede a la app en:**
+2. **Accede a la app en:**
   - http://localhost:5001
   

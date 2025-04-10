@@ -1,0 +1,9 @@
+version: "3"
+services:
+  edo_euler:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - "5001:5001"
+    command: python3 app.py
