@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Método de Euler con Octave</title>
+    <style>
+        body { font-family: sans-serif; padding: 2rem; }
+        input { margin-bottom: 10px; display: block; }
+    </style>
+</head>
+<body>
+    <h2>Resolver EDO con Método de Euler</h2>
+    <form method="POST">
+        <label>Ecuación dy/dx = f(x,y):</label>
+        <input type="text" name="funcion" placeholder="ej: y - x^2 + 1" required>
+
+        <label>x₀:</label>
+        <input type="number" step="any" name="x0" required>
+
+        <label>y₀:</label>
+        <input type="number" step="any" name="y0" required>
+
+        <label>h (paso):</label>
+        <input type="number" step="any" name="h" required>
+
+        <label>xₙ (hasta dónde resolver):</label>
+        <input type="number" step="any" name="xn" required>
+
+        <button type="submit">Resolver</button>
+    </form>
+
+    {% if puntos %}
+        <h3>Resultados:</h3>
+        <table border="1">
+            <tr><th>x</th><th>y</th></tr>
+            {% for p in puntos %}
+            <tr><td>{{ p.x }}</td><td>{{ p.y }}</td></tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+</body>
+</html>
